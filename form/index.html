@@ -7,56 +7,77 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        body{
+        body {
             font-family: "Arial", sans-serif;
-            background-color:cadetblue;
-            background:linear-gradient(90deg, cadetblue, #5085A0);
+            background-color: cadetblue;
+            background: linear-gradient(90deg, cadetblue, #5085A0);
             margin: 20px;
         }
-        #divWrapper, fieldset{
+
+        #divWrapper,
+        fieldset {
             background-color: aliceblue;
             max-width: 900px;
-            min-height:100px;
+            min-height: 100px;
             border-radius: 10px;
             padding: 2%;
             margin: 0 auto 10px;
         }
-        #formWrapper{
+
+        #formWrapper {
             display: flex;
-            flex-direction:row;
+            flex-direction: row;
         }
-        #leftColumn{
-            width:50%;
+
+        #leftColumn {
+            width: 50%;
             padding: 1%;
         }
-        #rightColumn{
-            width:50%;
+
+        #rightColumn {
+            width: 50%;
             padding: 1%;
         }
-        footer{
-            text-align:center;
+
+        footer {
+            text-align: center;
         }
-        #rightColumn fieldset p{
+
+        #rightColumn fieldset p {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             flex-wrap: wrap;
         }
+        #leftColumn fieldset p {
+            display:flex;
+            flex-direction:column;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
 
-        @media(max-width:900px){
-            #formWrapper{
+        #leftColumn input{
+            width: 90%;
+            padding: 5px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+
+        }
+
+
+        @media(max-width:900px) {
+            #formWrapper {
                 flex-direction: column;
             }
-            #leftColumn{
-            width:100%;
-            padding:0;
+            #leftColumn {
+                width: 100%;
+                padding: 0;
+            }
+            #rightColumn {
+                width: 100%;
+                padding: 0;
+            }
         }
-            #rightColumn{
-            width:100%;
-            padding: 0;
-        }
-    }
-    
     </style>
 </head>
 
@@ -67,33 +88,137 @@
             <section id="leftColumn">
                 <fieldset>
                     <legend>Block one</legend>
+                    <p>
+                        <!-- autofocus preselects one input to be filled out -->
+                        <!-- required doesn't allow user to submit unless input its filled -->
+                        <!-- tabindex lets u give and order of numbers to the inputs so when u click tab it goes to the next item -->
+                        <input id="firstName" name="firstName" type="text" placeholder="First Name" autofocus required tabindex="1">
+                        <input id="lastName" name="lastName" type="text" placeholder="Last Name" required tabindex="2">
+                        <input id="email" name="email" type="email" placeholder="email@somewhere.com" required tabindex="3">
+                        <input id="url" name="url" type="url" placeholder="URL" tabindex="4">
+                    </p>
+                    <p>
+                        <!-- label for is so that when you click on the word Username, you are redirected to the text box for that input -->
+                        <label for="username">Username: </label>
+                        <input id="username" name="username" type="text">
+                        <label for="password">Password: </label>
+                        <input id="username" name="username" type="password">
+                    </p>
                 </fieldset>
                 <fieldset>
                     <legend>Block two</legend>
+                    <p>
+                        <input id="address1" name="address1" type="text" placeholder="Address 1">
+                        <input id="address2" name="address2" type="text" placeholder="Address 2">
+                        <input id="city" name="city" type="text" placeholder="city">
+                        <input id="zip" name="zip" type="number" placeholder="Zipcode">
+                    </p>
+                    <p>
+                        <select>
+                            <optgroup label="USA">
+                                <option>Chicago</option>
+                                <option>New York</option>
+                                <option>Dallas</option>
+                                <option>Orlando</option>
+                            </optgroup>
+                            <optgroup label="Australia">
+                                <option>Sydney</option>
+                                <option>Brisbane</option>
+                                <option>Melbourne</option>
+                            </optgroup>
+                        </select>
+                        <select name="state" id="state">
+                            <option value="" selected="selected">Select a state</option>
+                            <!-- search option value of states on google for a snippet with these option tags -->
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </p>
                 </fieldset>
             </section>
             <section id="rightColumn">
                 <fieldset>
                     <legend>Block three</legend>
                     <p>
-                    <span><input type="radio" name="color" value="red" checked> Red</span>
-                    <span><input type="radio" name="color" value="green"> Green</span>
-                    <span><input type="radio" name="color" value="blue"> Blue</span>
-                    <span><input type="radio" name="color" value="cyan"> Cyan</span>
-                    <span><input type="radio" name="color" value="magenta"> Magenta</span>
+                        <span>
+                            <input type="radio" name="color" value="red" checked> Red</span>
+                        <span>
+                            <input type="radio" name="color" value="green"> Green</span>
+                        <span>
+                            <input type="radio" name="color" value="blue"> Blue</span>
+                        <span>
+                            <input type="radio" name="color" value="cyan"> Cyan</span>
+                        <span>
+                            <input type="radio" name="color" value="magenta"> Magenta</span>
                     </p>
                     <p>
-                        <span><input type="checkbox" name="fruit" value="apple">Apple</span>
-                        <span><input type="checkbox" name="fruit" value="orange">Orange</span>
-                        <span><input type="checkbox" name="fruit" value="banana">Banana</span>
-                        <span><input type="checkbox" name="fruit" value="peach">Peach</span>
-                        <span><input type="checkbox" name="fruit" value="pear">Pear</span>
+                        <span>
+                            <input type="checkbox" name="fruit" value="apple">Apple</span>
+                        <span>
+                            <input type="checkbox" name="fruit" value="orange">Orange</span>
+                        <span>
+                            <input type="checkbox" name="fruit" value="banana">Banana</span>
+                        <span>
+                            <input type="checkbox" name="fruit" value="peach">Peach</span>
+                        <span>
+                            <input type="checkbox" name="fruit" value="pear">Pear</span>
                     </p>
                 </fieldset>
                 <fieldset>
                     <legend>Block four</legend>
                     <textarea rows="4" cols="40" placeholder="What did you do today?">                    </textarea>
-                    <p><input type="submit" value="Submit"></p>
+                    <p>
+                        <input type="submit" value="Submit">
+                    </p>
                 </fieldset>
             </section>
 
