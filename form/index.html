@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: "Arial", sans-serif;
+            background-color:cadetblue;
+            background:linear-gradient(90deg, cadetblue, #5085A0);
+            margin: 20px;
+        }
+        #divWrapper, fieldset{
+            background-color: aliceblue;
+            max-width: 900px;
+            min-height:100px;
+            border-radius: 10px;
+            padding: 2%;
+            margin: 0 auto 10px;
+        }
+        #formWrapper{
+            display: flex;
+            flex-direction:row;
+        }
+        #leftColumn{
+            width:50%;
+            padding: 1%;
+        }
+        #rightColumn{
+            width:50%;
+            padding: 1%;
+        }
+        footer{
+            text-align:center;
+        }
+        #rightColumn fieldset p{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        @media(max-width:900px){
+            #formWrapper{
+                flex-direction: column;
+            }
+            #leftColumn{
+            width:100%;
+            padding:0;
+        }
+            #rightColumn{
+            width:100%;
+            padding: 0;
+        }
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div id="divWrapper">
+        <h2>My Form</h2>
+        <form id="formWrapper">
+            <section id="leftColumn">
+                <fieldset>
+                    <legend>Block one</legend>
+                </fieldset>
+                <fieldset>
+                    <legend>Block two</legend>
+                </fieldset>
+            </section>
+            <section id="rightColumn">
+                <fieldset>
+                    <legend>Block three</legend>
+                    <p>
+                    <span><input type="radio" name="color" value="red" checked> Red</span>
+                    <span><input type="radio" name="color" value="green"> Green</span>
+                    <span><input type="radio" name="color" value="blue"> Blue</span>
+                    <span><input type="radio" name="color" value="cyan"> Cyan</span>
+                    <span><input type="radio" name="color" value="magenta"> Magenta</span>
+                    </p>
+                    <p>
+                        <span><input type="checkbox" name="fruit" value="apple">Apple</span>
+                        <span><input type="checkbox" name="fruit" value="orange">Orange</span>
+                        <span><input type="checkbox" name="fruit" value="banana">Banana</span>
+                        <span><input type="checkbox" name="fruit" value="peach">Peach</span>
+                        <span><input type="checkbox" name="fruit" value="pear">Pear</span>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Block four</legend>
+                    <textarea rows="4" cols="40" placeholder="What did you do today?">                    </textarea>
+                    <p><input type="submit" value="Submit"></p>
+                </fieldset>
+            </section>
+
+
+        </form>
+
+
+    </div>
+    <footer>
+        <img src="img/logo.png" alt="logo">
+    </footer>
+</body>
+
+</html>
